@@ -16,8 +16,10 @@ public class LinkedHashMapExample extends TimerTask {
 	private static Map<String, Pizza> oven = new LinkedHashMap<String, Pizza>() {
 		protected boolean removeEldestEntry(Map.Entry eldest) {
 			for(Map.Entry<String, Pizza> entry: this.entrySet()) {
-				if(entry.getValue().getCookTime() > 5)
+				if(entry.getValue().getCookTime() > 5) {
+					System.out.println("~~Order #" + entry.getKey() + "'s " + entry.getValue().Cooked() + "~~");
 					return true;
+				}
 			}
 			return false;
 		}

@@ -45,6 +45,20 @@ public class Pizza {
 		this.cookTime++;
 	}
 	
+	public String Cooked() {
+		String result = "";
+		for(int i = 0; i < toppings.length; i++) {
+			if( i < toppings.length - 1)
+				result += toppings[i] + ", ";
+			else if(i == toppings.length - 1 && toppings.length != 1)
+				result += "and " + toppings[i];
+			else
+				result += toppings[i];
+		}
+		result += " pizza with " + sauce + " sauce is done cooking!";
+		return result;
+	}
+	
 	public String toString() {
 		String result = "";
 		for(int i = 0; i < toppings.length; i++) {
